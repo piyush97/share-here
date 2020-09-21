@@ -1,6 +1,9 @@
 import { MikroORM } from "@mikro-orm/core";
 import microConfig from "./mikro-orm.config";
 import express from "express";
+import { ApolloServer } from "apollo-server-express";
+import { buildSchema } from "type-graphql";
+import { HelloResolver } from "./resolvers/hello";
 
 const main = async () => {
   const port = 4000;
@@ -8,9 +11,12 @@ const main = async () => {
   orm.getMigrator().up();
 
   const app = express();
-  app.get("/", (_, res) => {
-    res.send("hello");
+  const apolloServer = new ApolloServer({
+    schema: await buildSchema({ resolvers: [HelloResolver], validate: false }),
   });
+
+  apolloServer.applyMiddleware({ app });
+
   app.listen(port, () => {
     console.log(`server started on port: ${port}`);
   });
