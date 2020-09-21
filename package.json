@@ -13,11 +13,11 @@
     "start:ts": "ts-node src/index.ts"
   },
   "devDependencies": {
-    "@types/express": "^4.17.8",
-    "@types/node": "^14.11.1",
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.0.27",
     "nodemon": "^2.0.4",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "@mikro-orm/cli": "^4.0.5",
@@ -28,7 +28,8 @@
     "express": "^4.17.1",
     "graphql": "^15.3.0",
     "pg": "^8.3.3",
-    "type-graphql": "^1.0.0"
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.0.0-rc.3"
   },
   "mikro-orm": {
     "useTsNode": true,
