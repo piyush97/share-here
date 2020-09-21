@@ -8,11 +8,13 @@ const main = async () => {
   orm.getMigrator().up();
 
   const app = express();
+  app.get("/", (_, res) => {
+    res.send("hello");
+  });
   app.listen(port, () => {
     console.log(`server started on port: ${port}`);
   });
 };
-console.log("hello world");
 
 main().catch((err) => {
   console.log(err);
