@@ -8,7 +8,7 @@ export default {
     pattern: /^[\w-]+\d+\.[tj]s$/, // regex pattern for the migration files
   },
   entities: [Post],
-  dbName: "share-here",
+  dbName: "sharehere",
   type: "postgresql",
   debug: !__prod__,
 } as Parameters<typeof MikroORM.init>[0];
